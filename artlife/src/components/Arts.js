@@ -7,10 +7,8 @@ export const Arts = () => {
   const [selectedClassification, setSelectedClassification] = useState('');
 
   const classificationUrl = `https://api.harvardartmuseums.org/classification/?apikey=${process.env.REACT_APP_API_KEY}&&page=3`;
-  const artUrlBase = `https://api.harvardartmuseums.org/object/?apikey=${process.env.REACT_APP_API_KEY}&size=9&hasimage=1&person=any&sort=random&q=classification:`;
 
   const { data: classifications, fetchData } = useFetch(classificationUrl);
-  const { fetchData: fetchArtData } = useFetch(artUrlBase);
 
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -19,16 +17,6 @@ export const Arts = () => {
 
     fetchDataAsync();
   }, []);
-
-  useEffect(() => {
-    const fetchDataAsync = async () => {
-      if (selectedClassification) {
-        const artUrl = `${artUrlBase}${selectedClassification}`;
-        await fetchArtData(artUrl);
-      }
-    };
-    fetchDataAsync();
-  }, [selectedClassification]);
 
   const handleClick = (classification) => {
     setSelectedClassification(classification.name);

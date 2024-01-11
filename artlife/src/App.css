@@ -180,3 +180,13 @@ small {
   margin: 9px;
   cursor: pointer;
 }
+
+.item:hover {
+  background-color: rgb(194, 194, 194);
+}
+
+.item.clicked {
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+}
