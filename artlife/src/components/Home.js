@@ -3,10 +3,8 @@ import { SearchArts } from './SearchArts';
 
 export const Home = () => {
   return (
-    <>
-      <div className="container">
-        <SearchArts />
-      </div>
-    </>
+    <div className="container">
+      <SearchArts />
+    </div>
   );
 };

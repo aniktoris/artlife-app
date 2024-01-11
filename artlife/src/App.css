@@ -8,6 +8,10 @@ html{
   box-sizing: border-box;
 }
 
+main{
+  margin: 90px 10px;
+}
+
 .App-header{
   display: flex;
   position: fixed;
@@ -65,7 +69,6 @@ small {
 
 .form {
   display: grid;
-  margin-top: 80px;
 }
 
 .label {
@@ -151,21 +154,29 @@ small {
 .img-details {
   height: 50rem;
   width: 40rem;
-  margin-top: 90px;
   margin-left: 100px;
 }
 
 .info-details{
-  margin-top: 90px;
   margin-left: 0;
   max-width: 50%;
 }
 
 .loading-details, .error-details {
   font-size: 3rem;
-  margin-top: 90px;
 }
 
 .title-details{
   font-size: 2rem;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+}
+
+.item {
+  font-size: 1.6rem;
+  margin: 9px;
+  cursor: pointer;
 }
