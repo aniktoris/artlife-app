@@ -48,6 +48,11 @@ body{
   font-family: 'Nunito', sans-serif;
 }
 
+body.dark-mode{
+  background-color: black;
+  background-image: none;
+}
+
 p {
   font-size: 1.3rem;
 }
@@ -71,10 +76,14 @@ small {
   display: grid;
 }
 
-.label {
+label {
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
   text-transform: uppercase;
+}
+
+label.dark {
+  color: white;
 }
 
 .input {
@@ -86,7 +95,7 @@ small {
   margin-bottom: 1rem;
 }
 
-.button {
+button {
   background-color: rgba(0,0,0,0.75);
   color: white;
   padding: 1rem 2rem;
@@ -97,8 +106,13 @@ small {
   transition: background-color 250ms;
 }
 
-.button:hover {
+button:hover {
   background-color: rgba(0,0,0,0.85);
+}
+
+button.dark {
+  background-color: pink;
+  color: black;
 }
 
 @media (min-width:786px) {
@@ -171,6 +185,10 @@ small {
   max-width: 50%;
 }
 
+.info-details.dark {
+  color: white;
+}
+
 .loading-details, .error-details {
   font-size: 3rem;
 }
@@ -182,6 +200,10 @@ small {
 .list{
   list-style: none;
   display: flex;
+}
+
+.list.dark{
+  color: white;
 }
 
 .item {

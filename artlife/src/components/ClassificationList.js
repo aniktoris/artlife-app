@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ClassificationItem } from './ClassificationItem';
+import { MuseumContext } from '../context/GlobalState';
 
 export const ClassificationList = ({
   classifications,
   handleClick,
   selectedClassification,
 }) => {
+  const { darkMode } = useContext(MuseumContext);
+
   return (
-    <ul className="list">
+    <ul className={`list ${darkMode ? 'dark' : ''}`}>
       {classifications.slice(0, 10).map((classification, index) => {
         return (
           <ClassificationItem
