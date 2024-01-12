@@ -3,6 +3,7 @@ import AppReducer from './AppReducer';
 
 const initialState = {
   favorites: [],
+  darkMode: false,
 };
 
 export const MuseumContext = createContext(initialState);
@@ -24,9 +25,21 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const toggleDarkMode = () => {
+    dispatch({
+      type: 'TOGGLE_DARK_MODE',
+    });
+  };
+
   return (
     <MuseumContext.Provider
-      value={{ favorites: state.favorites, addFavorites, deleteFavorites }}
+      value={{
+        favorites: state.favorites,
+        darkMode: state.darkMode,
+        addFavorites,
+        deleteFavorites,
+        toggleDarkMode,
+      }}
     >
       {children}
     </MuseumContext.Provider>

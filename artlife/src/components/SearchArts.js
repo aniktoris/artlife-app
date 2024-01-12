@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ArtCard from './ArtCard';
 import { useFetch } from '../hooks/useFetch';
+import { MuseumContext } from '../context/GlobalState';
 
 export const SearchArts = () => {
   const [query, setQuery] = useState('');
@@ -8,6 +9,7 @@ export const SearchArts = () => {
   const url = `https://api.harvardartmuseums.org/object/?apikey=${process.env.REACT_APP_API_KEY}&size=9&hasimage=1&person=any&sort=random&q=classification:'${query}'`;
 
   const { data, loading, error, fetchData } = useFetch(url);
+  const { darkMode } = useContext(MuseumContext);
 
   const searchArts = async (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export const SearchArts = () => {
   return (
     <>
       <form className="form" onSubmit={searchArts}>
-        <label className="label" htmlFor="query">
+        <label className={darkMode ? 'dark' : ''} htmlFor="query">
           Art Classification
         </label>
         <input
@@ -28,7 +30,7 @@ export const SearchArts = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button className="button" type="submit">
+        <button className={darkMode ? 'dark' : ''} type="submit">
           SEARCH
         </button>
       </form>

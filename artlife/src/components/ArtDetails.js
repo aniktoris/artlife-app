@@ -30,6 +30,8 @@ export default function ArtDetails() {
     }
   };
 
+  const { darkMode } = useContext(MuseumContext);
+
   return (
     <div className="container-details">
       {loading ? (
@@ -45,7 +47,7 @@ export default function ArtDetails() {
             src={data.primaryimageurl}
             alt={data.title}
           />
-          <div className="info-details">
+          <div className={`info-details ${darkMode ? 'dark' : ''}`}>
             <h3 className="title-details">{data.title}</h3>
             <p>
               <small>DATED: {data.dated}</small>

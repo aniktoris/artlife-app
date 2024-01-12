@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Lamp } from './Lamp';
 
 export const Header = () => {
   const activeStyles = {
@@ -37,6 +38,7 @@ export const Header = () => {
             ARTLIST
           </NavLink>
         </nav>
+        <Lamp />
       </header>
     </div>
   );
