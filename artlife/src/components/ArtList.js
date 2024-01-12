@@ -12,6 +12,7 @@ export const ArtList = ({ url }) => {
 
     fetchDataAsync();
   }, [url]);
+
   return (
     <div className="card-list">
       {loading ? (

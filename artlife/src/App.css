@@ -19,7 +19,7 @@ main{
   top: 0;
   align-items: center;
   padding-right: 150px;
-  background-image: linear-gradient(to right, rgb(250, 171, 171), rgb(247, 206, 206));
+  background-image: url('./assets/painted-surface.jpg');
   z-index: 1000;
 }
 
@@ -136,6 +136,15 @@ small {
   font-size: 1.5rem;
 }
 
+.card--title:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.card-container{
+  color: black;
+}
+
 .card--image {
   display: block;
   height: 300px;
@@ -190,3 +199,12 @@ small {
   color: white;
   font-weight: bold;
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-left: 270px;
+}
+
+
