@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import { Museum } from './Museum';
+import { MuseumContext } from '../context/GlobalState';
 
 export default function ArtDetails() {
   const { id } = useParams();
   const url = `https://api.harvardartmuseums.org/object/${id}/?apikey=${process.env.REACT_APP_API_KEY}`;
 
   const { data, loading, error, fetchData } = useFetch(url);
+  const { favorites, addFavorites, deleteFavorites } =
+    useContext(MuseumContext);
 
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -15,6 +19,16 @@ export default function ArtDetails() {
 
     fetchDataAsync();
   }, []);
+
+  const isFavorite = favorites.includes(id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      deleteFavorites(id);
+    } else {
+      addFavorites(id);
+    }
+  };
 
   return (
     <div className="container-details">
@@ -67,6 +81,10 @@ export default function ArtDetails() {
                 VERIFICATION LEVEL: {data.verificationleveldescription}
               </small>
             </p>
+            <Museum
+              handleFavoriteClick={handleFavoriteClick}
+              isFavorite={isFavorite}
+            />
           </div>
         </>
       )}

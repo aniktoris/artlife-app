@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import { Museum } from './Museum';
+import { useContext } from 'react';
+import { MuseumContext } from '../context/GlobalState';
 
 export default function ArtCard({ art }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { pathname } = useLocation();
+
+  const renderMuseum = pathname === '/arts' || pathname === '/artlist';
 
   useEffect(() => {
     const img = new Image();
@@ -15,9 +21,28 @@ export default function ArtCard({ art }) {
     img.src = art.primaryimageurl;
   }, [art.primaryimageurl]);
 
+  const { favorites, addFavorites, deleteFavorites } =
+    useContext(MuseumContext);
+
+  const isFavorite = favorites.includes(art.id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      deleteFavorites(art.id);
+    } else {
+      addFavorites(art.id);
+    }
+  };
+
   return (
     <div className="card">
-      <Link to={`/${art.id}`}>
+      {renderMuseum && (
+        <Museum
+          handleFavoriteClick={handleFavoriteClick}
+          isFavorite={isFavorite}
+        />
+      )}
+      <NavLink className="card-container" to={`/${art.id}`}>
         {imageLoaded ? (
           <img
             className="card--image"
@@ -26,7 +51,7 @@ export default function ArtCard({ art }) {
           />
         ) : null}
         <h3 className="card--title">{art.title}</h3>
-      </Link>
+      </NavLink>
       <p>
         <small>DATED: {art.dated}</small>
       </p>
