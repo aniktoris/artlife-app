@@ -229,4 +229,31 @@ button.dark {
   margin-left: 270px;
 }
 
+.expo-title {
+  text-align: center;
+}
+
+.expo-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.expo-container-div{
+flex-basis: calc(25% - 16px);
+}
+
+.expo-image {
+  height: 200px;
+  width: 180px;
+}
+
+.expo-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 70%;
+  text-align: justify;
+  padding-left: 20rem;
+  padding-top: 5rem;
+}
 
