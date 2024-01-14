@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import Exhibition from './Exhibition';
+import { TicketDisplay } from './TicketDisplay';
+import { Message } from './Message';
 
 export const Exhibitions = () => {
   const url = `https://api.harvardartmuseums.org/exhibition?apikey=${process.env.REACT_APP_API_KEY}&status=upcoming`;
@@ -25,6 +27,7 @@ export const Exhibitions = () => {
           <Exhibition exhibition={exhibition} key={exhibition.id} />
         ))}
       </div>
+      <TicketDisplay />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ArtDetails from './components/ArtDetails';
 import { GlobalProvider } from './context/GlobalState';
 import { ExhibitionDetails } from './components/ExhibitionDetails';
+import { Message } from './components/Message';
 
 function App() {
   return (
