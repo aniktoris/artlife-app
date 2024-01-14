@@ -254,6 +254,13 @@ flex-basis: calc(25% - 16px);
   max-width: 70%;
   text-align: justify;
   padding-left: 20rem;
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
+.ticket {
+  text-align: center;
+}
+
+.message{
+  font-size: 18px;
+}

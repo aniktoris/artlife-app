@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
+import { TicketDisplay } from './TicketDisplay';
 
 export const ExhibitionDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,10 @@ export const ExhibitionDetails = () => {
   return loading ? (
     <p>Loading exhibition data for you...</p>
   ) : (
-    <p className="expo-description">{data.description}</p>
+    <div className="expo-description">
+      <h3>{data.title}</h3>
+      <p>{data.description}</p>
+      <TicketDisplay />
+    </div>
   );
 };
