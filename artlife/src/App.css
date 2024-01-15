@@ -136,6 +136,7 @@ button.dark {
 }
 
 .card {
+  position: relative;
   padding: 2rem 2.5rem;
   border-radius: 10px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
@@ -143,6 +144,13 @@ button.dark {
   background-color: white;
   flex: 0 0 calc(33.33% - 20px);
   max-width: calc(33.33% - 15px); 
+}
+
+@media (max-width: 900px) {
+  .card {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 15px);
+  }
 }
 
 .card--title {
@@ -161,8 +169,8 @@ button.dark {
 
 .card--image {
   display: block;
-  height: 300px;
-  width: 250px;
+  height: 31rem;
+  width: 25rem;
 }
 
 .loading {
@@ -200,6 +208,7 @@ button.dark {
 .list{
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .list.dark{
@@ -223,10 +232,10 @@ button.dark {
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 2.8rem;
+  height: 2.8rem;
   position: absolute;
-  margin-left: 270px;
+  margin-left: 29rem;
 }
 
 .expo-title {
