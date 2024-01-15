@@ -1,6 +1,20 @@
 # artlife-react-app
 Artlife application that uses Harvard Art Museums data from public [API](https://github.com/harvardartmuseums/api-docs?tab=readme-ov-file). Museum data encompasses the entire wealth of information a museum collects and digitizes. This includes but is not limited to information about artworks and artists in their collection, venue heatmaps, website traffic analytics, and publications about the museum.
 
+## Installing dependencies
+You need to install dependencies by running `npm install` in the project directory. 'Artlife' directory serves Frontend of the application and 'server' directory - backend.
+
+### `npm start`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Features
+1. Home page: arts can be searched using the search bar by classification name: i.e. paintings, prints, drawings, sculptures, photographs etc. You can go to the details page of the specific art from there.
+2. Arts page: randomly displays 9 art objects and have a sub header for 10 classifications. You can go to the details page of the specific art from there. Museum icon can be clicked to store the favorite objects on the Artlist page.
+3. Exhibitions page: displays upcoming exhibitions with the option to buy the tickets using Stripe API. You can go to the details page of the specific exhibition with the purchase option from there too. To buy the ticket, use the Stripe success card number - 4242 4242 4242 4242. If the transaction was successful, you will be redirected to the Home page with success or error message.
+4. Artlife page: favorite art objects are stored there. By clicking again on the museum icon the object is being removed.
+5. Bulb icon: dark/light mode can be switched on/off by clicking on it.
+
 ### Must have
 1. Multiple pages using React components and client-side routing: Home, Arts, Exhibitions, ArtList (to store the favorite arts).
 2. Header will include logo and above mentioned pages. It will be seen on each page of the application.
