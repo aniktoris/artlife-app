@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import museumEmpty from '../assets/museum-empty.png';
 import museumSolid from '../assets/museum-solid.png';
 
 export const Museum = ({ handleFavoriteClick, isFavorite }) => {
   const [museum, setMuseum] = useState(isFavorite ? museumSolid : museumEmpty);
-
-  useEffect(() => {
-    console.log('isFavorite changed:', isFavorite);
-    setMuseum(isFavorite ? museumSolid : museumEmpty);
-  }, []);
 
   const handleClick = () => {
     const newMuseum = museum === museumEmpty ? museumSolid : museumEmpty;
