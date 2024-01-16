@@ -7,6 +7,7 @@ import { MuseumContext } from '../context/GlobalState';
 export default function ArtCard({ art }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { pathname } = useLocation();
+  const id = art.id.toString();
 
   const renderMuseum = pathname === '/arts' || pathname === '/artlist';
 
@@ -24,13 +25,13 @@ export default function ArtCard({ art }) {
   const { favorites, addFavorites, deleteFavorites } =
     useContext(MuseumContext);
 
-  const isFavorite = favorites.includes(art.id);
+  const isFavorite = favorites.includes(id);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      deleteFavorites(art.id);
+      deleteFavorites(id);
     } else {
-      addFavorites(art.id);
+      addFavorites(id);
     }
   };
 
