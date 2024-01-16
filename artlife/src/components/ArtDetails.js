@@ -9,8 +9,6 @@ export default function ArtDetails() {
   const url = `https://api.harvardartmuseums.org/object/${id}/?apikey=${process.env.REACT_APP_API_KEY}`;
 
   const { data, loading, error, fetchData } = useFetch(url);
-  const { favorites, addFavorites, deleteFavorites } =
-    useContext(MuseumContext);
 
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -19,6 +17,9 @@ export default function ArtDetails() {
 
     fetchDataAsync();
   }, []);
+
+  const { favorites, addFavorites, deleteFavorites } =
+    useContext(MuseumContext);
 
   const isFavorite = favorites.includes(id);
 
