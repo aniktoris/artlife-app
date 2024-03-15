@@ -1,6 +1,8 @@
 # artlife-react-app
 Artlife application that uses Harvard Art Museums data from public [API](https://github.com/harvardartmuseums/api-docs?tab=readme-ov-file). Museum data encompasses the entire wealth of information a museum collects and digitizes. This includes but is not limited to information about artworks and artists in their collection, venue heatmaps, website traffic analytics, and publications about the museum.
 
+![Screenshot](https://res.cloudinary.com/dibnqoge8/image/upload/v1710497976/Screenshot_133_oismoe.png)
+
 ## Installing dependencies
 You need to install dependencies by running `npm install` in the project directory. 'Artlife' directory serves Frontend of the application and 'server' directory - backend.
 
